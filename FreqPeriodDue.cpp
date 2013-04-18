@@ -30,6 +30,7 @@ void FreqPeriod::begin(int periodPin){
   FR_USE_TC->TC_CHANNEL[FR_USE_CH].TC_IER=TC_IER_CPCS;
   FR_USE_TC->TC_CHANNEL[FR_USE_CH].TC_IDR=~TC_IER_CPCS;
   NVIC_EnableIRQ(FR_USE_TC_IRQ);
+  //A compromise for now until I can find a way to have the interrupt and not cause possible conflicts with other libraries using the same PIO.
   attachInterrupt(periodPin, FreqPulse, FALLING);
 }
 

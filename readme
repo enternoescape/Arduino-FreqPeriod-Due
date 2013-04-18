@@ -1,0 +1,10 @@
+FreqPeriod library for Arduino Due.
+
+I use this primarily to measure IR carrier frequency. As far as I can tell it's accurate enough.
+
+The only real concern I have right now is having to use attachInterrupt. I know I could create an interrupt for whatever PIO I choose (and it would make things even more accurate), but then if you wanted to use that PIO for another library you'd instantly have a conflict. Suggestions are more than welcome to improve the library.
+
+It is based loosely on the FreqPeriod library from:
+FreqPeriod Library for Frequency Measurement.
+Created by Martin Nawrath, KHM Lab3, June. 2010
+http://interface.khm.de/index.php/lab/experiments/frequency-measurement-library/
